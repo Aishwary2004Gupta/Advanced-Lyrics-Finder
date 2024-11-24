@@ -1,6 +1,6 @@
 # 🎵 Advanced-Lyrics-Finder
 
-A beautiful, modern web application for searching and discovering song lyrics. Built with React, Firebase Authentication, and the Genius API.
+A modern web application for searching and discovering song lyrics. Built with React, Firebase Authentication, and the Genius API.
 
 ![LyricsFinder Preview](https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=1200&h=400)
 
@@ -25,7 +25,7 @@ A beautiful, modern web application for searching and discovering song lyrics. B
 
 1. **Clone the repository**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Aishwary2004Gupta/Advanced-Lyrics-Finder.git
 cd lyrics-finder
 ```
 
