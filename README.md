@@ -2,7 +2,8 @@
 
 A modern web application for searching and discovering song lyrics. Built with React, Firebase Authentication, and the Genius API.
 
-![LyricsFinder Preview](https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=1200&h=400)
+![LyricsFinder Preview](https://github.com/user-attachments/assets/5a171626-496c-471c-bbc2-f7c13df209a5)
+
 
 ## ✨ Features
 
