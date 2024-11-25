@@ -7,7 +7,7 @@ const firebaseConfig = {
   projectId: "lyrics-finder-app-2024",
   storageBucket: "lyrics-finder-app-2024.appspot.com",
   messagingSenderId: "123456789012",
-  appId: "1:123456789012:web:abc123def456ghi789jkl"
+  appId: "your_app_id"
 };
 
 const app = initializeApp(firebaseConfig);
