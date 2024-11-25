@@ -6,7 +6,7 @@ const firebaseConfig = {
   authDomain: "lyrics-finder-app-2024.firebaseapp.com",
   projectId: "lyrics-finder-app-2024",
   storageBucket: "lyrics-finder-app-2024.appspot.com",
-  messagingSenderId: "123456789012",
+  messagingSenderId: "your_messaging_sender_id",
   appId: "your_app_id"
 };
 
