@@ -4,7 +4,7 @@ import { getAuth } from 'firebase/auth';
 const firebaseConfig = {
   apiKey: "your_firebase_api_key",
   authDomain: "lyrics-finder-app-2024.firebaseapp.com",
-  projectId: "lyrics-finder-app-2024",
+  projectId: "your-project-id",
   storageBucket: "your-project.appspot.com",
   messagingSenderId: "your_messaging_sender_id",
   appId: "your_app_id"
