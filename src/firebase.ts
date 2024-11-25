@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBkkFF0XhNZeWuDmOfEhsgdfX1VBG7WTas",
+  apiKey: "your_firebase_api_key",
   authDomain: "lyrics-finder-app-2024.firebaseapp.com",
   projectId: "lyrics-finder-app-2024",
   storageBucket: "lyrics-finder-app-2024.appspot.com",
