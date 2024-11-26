@@ -4,7 +4,6 @@ A modern web application for searching and discovering song lyrics. Built with R
 
 ![LyricsFinder Preview](https://github.com/user-attachments/assets/5a171626-496c-471c-bbc2-f7c13df209a5)
 
-
 ## ✨ Features
 
 - 🔐 Secure user authentication (signup/login)
