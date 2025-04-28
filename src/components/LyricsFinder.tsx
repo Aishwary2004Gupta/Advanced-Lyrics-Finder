@@ -1,34 +1,38 @@
-import React, { useState } from 'react';
-import { Search, Loader2 } from 'lucide-react';
+import React, { useState } from "react";
+import { Search, Loader2 } from "lucide-react";
 
 export default function LyricsFinder() {
-  const [artist, setArtist] = useState('');
-  const [song, setSong] = useState('');
-  const [lyrics, setLyrics] = useState('');
+  const [artist, setArtist] = useState("");
+  const [song, setSong] = useState("");
+  const [lyrics, setLyrics] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!artist || !song) return;
 
     setLoading(true);
-    setError('');
-    setLyrics('');
+    setError("");
+    setLyrics("");
 
     try {
       const response = await fetch(
-        `https://api.lyrics.ovh/v1/${encodeURIComponent(artist)}/${encodeURIComponent(song)}`
+        `https://api.lyrics.ovh/v1/${encodeURIComponent(
+          artist
+        )}/${encodeURIComponent(song)}`
       );
-      
+
       if (!response.ok) {
-        throw new Error('Lyrics not found');
+        throw new Error("Lyrics not found");
       }
 
       const data = await response.json();
       setLyrics(data.lyrics);
     } catch (error) {
-      setError('Could not find lyrics for this song. Please check the artist and song name.');
+      setError(
+        "Could not find lyrics for this song. Please check the artist and song name."
+      );
     } finally {
       setLoading(false);
     }
@@ -40,7 +44,10 @@ export default function LyricsFinder() {
         <form onSubmit={handleSubmit} className="space-y-4 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="artist" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="artist"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Artist Name
               </label>
               <input
@@ -54,7 +61,10 @@ export default function LyricsFinder() {
               />
             </div>
             <div>
-              <label htmlFor="song" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="song"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Song Title
               </label>
               <input
