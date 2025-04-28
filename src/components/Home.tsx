@@ -1,6 +1,6 @@
 // import React from 'react';
-import { Link } from 'react-router-dom';
-import { Music, Search, Lock } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Music, Search, Lock } from "lucide-react";
 
 export default function Home() {
   return (
@@ -11,29 +11,36 @@ export default function Home() {
           Find Your Favorite Song Lyrics
         </h1>
         <p className="text-xl text-gray-300 mb-12">
-          Discover lyrics from millions of songs instantly. Sign up now for a seamless experience!
+          Discover lyrics from millions of songs instantly. Sign up now for a
+          seamless experience!
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="p-6 rounded-lg bg-black/30 backdrop-blur-sm border border-white/10">
             <Search className="h-8 w-8 text-purple-400 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Quick Search</h3>
-            <p className="text-gray-400">Find lyrics by artist and song title instantly</p>
+            <p className="text-gray-400">
+              Find lyrics by artist and song title instantly
+            </p>
           </div>
-          
+
           <div className="p-6 rounded-lg bg-black/30 backdrop-blur-sm border border-white/10">
             <Music className="h-8 w-8 text-purple-400 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Vast Database</h3>
-            <p className="text-gray-400">Access lyrics from millions of songs worldwide</p>
+            <p className="text-gray-400">
+              Access lyrics from millions of songs worldwide
+            </p>
           </div>
-          
+
           <div className="p-6 rounded-lg bg-black/30 backdrop-blur-sm border border-white/10">
             <Lock className="h-8 w-8 text-purple-400 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Secure Access</h3>
-            <p className="text-gray-400">Your personal lyrics search history, secured</p>
+            <p className="text-gray-400">
+              Your personal lyrics search history, secured
+            </p>
           </div>
         </div>
-        
+
         <div className="space-x-4">
           <Link
             to="/signup"
