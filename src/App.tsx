@@ -1,12 +1,12 @@
 // import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
-import LyricsFinder from './components/LyricsFinder';
-import PrivateRoute from './components/PrivateRoute';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import LyricsFinder from "./components/LyricsFinder";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -34,7 +34,6 @@ function App() {
 }
 
 export default App;
-
 
 /*
 import React, { useState } from 'react';
