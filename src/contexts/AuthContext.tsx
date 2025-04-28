@@ -1,12 +1,12 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { 
+import React, { createContext, useContext, useState, useEffect } from "react";
+import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-  User
-} from 'firebase/auth';
-import { auth } from '../firebase';
+  User,
+} from "firebase/auth";
+import { auth } from "../firebase";
 
 interface AuthContextType {
   currentUser: User | null;
@@ -27,7 +27,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   async function signup(email: string, password: string) {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       setCurrentUser(userCredential.user);
     } catch (error: any) {
       throw new Error(error.message);
@@ -36,7 +40,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   async function login(email: string, password: string) {
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       setCurrentUser(userCredential.user);
     } catch (error: any) {
       throw new Error(error.message);
@@ -65,7 +73,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     currentUser,
     signup,
     login,
-    logout
+    logout,
   };
 
   return (
