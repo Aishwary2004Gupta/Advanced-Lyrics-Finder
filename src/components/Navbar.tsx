@@ -1,7 +1,7 @@
 // import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { Music, LogOut } from 'lucide-react';
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import { Music, LogOut } from "lucide-react";
 
 export default function Navbar() {
   const { currentUser, logout } = useAuth();
@@ -10,9 +10,9 @@ export default function Navbar() {
   async function handleLogout() {
     try {
       await logout();
-      navigate('/login');
+      navigate("/login");
     } catch (error) {
-      console.error('Failed to log out', error);
+      console.error("Failed to log out", error);
     }
   }
 
@@ -27,7 +27,10 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             {currentUser ? (
               <>
-                <Link to="/lyrics" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <Link
+                  to="/lyrics"
+                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
                   Find Lyrics
                 </Link>
                 <button
@@ -40,7 +43,10 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <Link to="/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <Link
+                  to="/login"
+                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
                   Login
                 </Link>
                 <Link
