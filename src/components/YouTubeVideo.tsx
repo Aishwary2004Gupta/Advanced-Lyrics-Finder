@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 interface YouTubeVideoProps {
   query: string;
@@ -9,15 +9,18 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ query }) => {
   const [videoId, setVideoId] = useState<string | null>(null);
 
   const fetchVideo = async () => {
-    const API_KEY = 'YOUR_YOUTUBE_API_KEY';
-    const response = await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
-      params: {
-        part: 'snippet',
-        q: query,
-        type: 'video',
-        key: API_KEY,
-      },
-    });
+    const API_KEY = "YOUR_YOUTUBE_API_KEY";
+    const response = await axios.get(
+      `https://www.googleapis.com/youtube/v3/search`,
+      {
+        params: {
+          part: "snippet",
+          q: query,
+          type: "video",
+          key: API_KEY,
+        },
+      }
+    );
 
     if (response.data.items.length > 0) {
       setVideoId(response.data.items[0].id.videoId);
