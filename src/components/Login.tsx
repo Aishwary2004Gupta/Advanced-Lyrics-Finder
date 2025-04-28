@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { LogIn } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import { LogIn } from "lucide-react";
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -15,12 +15,14 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      setError('');
+      setError("");
       setLoading(true);
       await login(email, password);
-      navigate('/lyrics');
+      navigate("/lyrics");
     } catch (error: any) {
-      setError(error.message || 'Failed to sign in. Please check your credentials.');
+      setError(
+        error.message || "Failed to sign in. Please check your credentials."
+      );
     } finally {
       setLoading(false);
     }
@@ -33,8 +35,11 @@ export default function Login() {
           <LogIn className="mx-auto h-12 w-12 text-purple-400" />
           <h2 className="mt-6 text-3xl font-bold text-white">Welcome back</h2>
           <p className="mt-2 text-sm text-gray-400">
-            Don't have an account?{' '}
-            <Link to="/signup" className="font-medium text-purple-400 hover:text-purple-300">
+            Don't have an account?{" "}
+            <Link
+              to="/signup"
+              className="font-medium text-purple-400 hover:text-purple-300"
+            >
               Sign up
             </Link>
           </p>
@@ -47,7 +52,10 @@ export default function Login() {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="text-sm font-medium text-gray-300">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-gray-300"
+              >
                 Email address
               </label>
               <input
@@ -60,7 +68,10 @@ export default function Login() {
               />
             </div>
             <div>
-              <label htmlFor="password" className="text-sm font-medium text-gray-300">
+              <label
+                htmlFor="password"
+                className="text-sm font-medium text-gray-300"
+              >
                 Password
               </label>
               <input
@@ -80,7 +91,7 @@ export default function Login() {
             disabled={loading}
             className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50"
           >
-            {loading ? 'Signing in...' : 'Sign in'}
+            {loading ? "Signing in..." : "Sign in"}
           </button>
         </form>
       </div>
