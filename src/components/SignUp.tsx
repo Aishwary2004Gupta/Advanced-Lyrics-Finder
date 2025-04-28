@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { UserPlus } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import { UserPlus } from "lucide-react";
 
 export default function SignUp() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { signup } = useAuth();
   const navigate = useNavigate();
@@ -16,20 +16,20 @@ export default function SignUp() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      return setError('Passwords do not match');
+      return setError("Passwords do not match");
     }
 
     if (password.length < 6) {
-      return setError('Password must be at least 6 characters long');
+      return setError("Password must be at least 6 characters long");
     }
 
     try {
-      setError('');
+      setError("");
       setLoading(true);
       await signup(email, password);
-      navigate('/lyrics');
+      navigate("/lyrics");
     } catch (error: any) {
-      setError(error.message || 'Failed to create an account');
+      setError(error.message || "Failed to create an account");
     } finally {
       setLoading(false);
     }
@@ -40,10 +40,15 @@ export default function SignUp() {
       <div className="max-w-md w-full space-y-8 bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-white/10">
         <div className="text-center">
           <UserPlus className="mx-auto h-12 w-12 text-purple-400" />
-          <h2 className="mt-6 text-3xl font-bold text-white">Create an account</h2>
+          <h2 className="mt-6 text-3xl font-bold text-white">
+            Create an account
+          </h2>
           <p className="mt-2 text-sm text-gray-400">
-            Already have an account?{' '}
-            <Link to="/login" className="font-medium text-purple-400 hover:text-purple-300">
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="font-medium text-purple-400 hover:text-purple-300"
+            >
               Sign in
             </Link>
           </p>
@@ -56,7 +61,10 @@ export default function SignUp() {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="text-sm font-medium text-gray-300">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-gray-300"
+              >
                 Email address
               </label>
               <input
@@ -69,7 +77,10 @@ export default function SignUp() {
               />
             </div>
             <div>
-              <label htmlFor="password" className="text-sm font-medium text-gray-300">
+              <label
+                htmlFor="password"
+                className="text-sm font-medium text-gray-300"
+              >
                 Password
               </label>
               <input
@@ -81,10 +92,15 @@ export default function SignUp() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <p className="mt-1 text-sm text-gray-400">Must be at least 6 characters long</p>
+              <p className="mt-1 text-sm text-gray-400">
+                Must be at least 6 characters long
+              </p>
             </div>
             <div>
-              <label htmlFor="confirm-password" className="text-sm font-medium text-gray-300">
+              <label
+                htmlFor="confirm-password"
+                className="text-sm font-medium text-gray-300"
+              >
                 Confirm Password
               </label>
               <input
@@ -104,7 +120,7 @@ export default function SignUp() {
             disabled={loading}
             className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50"
           >
-            {loading ? 'Creating account...' : 'Create account'}
+            {loading ? "Creating account..." : "Create account"}
           </button>
         </form>
       </div>
